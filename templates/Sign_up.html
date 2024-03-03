@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Spin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="static/images/final logo.png" />
+        <link rel="stylesheet" href="static/css/stylesheet.css">
+        <link rel="stylesheet" href="static/css/all.css">
+    </head>
+    <body>
+        <!-- The start of Sign up -->
+        <div class="signUp">
+            <div class="header">
+                <div class="headerLogo">
+                    <img src="static/images/final logo.png" alt="Logo">
+                </div>
+                <div class="links">
+                    <a class="l1" href="{{ url_for('register') }}">Sign Up</a>
+                    <a class="l1" href="{{ url_for('login') }}">Sign In</a>
+                    <a class="l1" href="{{ url_for('profile') }}">Profile</a>
+                    <a class="l1" href="{{ url_for('home') }}">Home</a>
+                </div>
+            </div>
+            <div class="content">
+                <!-- <p>Welcome To Our Website, Sign up below</p> -->
+                <form method="post">
+                    <h2>Welcome Back!</h2>
+                    <i class="fa-sharp fa-solid fa-circle-user"></i>
+                    <div class="contentLogo">
+                        <!-- need to be filled with a logo -->
+                    </div>
+                    <input class="contentEmail" type="email" name="Email" placeholder="Enter Your email" required>
+                    <input class="contentPassword" type="password" name="Password" placeholder="Enter Your Password" required>
+                    <a href="Sign_In.html" class="formLink">Don't have an account? Sign In!</a>
+                    <p>
+                        {{msg}}
+                    </p>
+                    <input class="contentSubmit" type="Submit" name="Submit">
+                </form>
+            </div>
+            <div class="footer">
+                <div class="footerContactUs">
+                    <div class="footerContactUsLinks">
+                        <div class="l2"><a href="https://www.google.com/maps/@30.0261422,31.178408,16z?entry=ttu" target="_blank"><i class="fa-solid fa-location-dot"></i></a> <span>Giza, Saft el-laban, street of el3shreen</span></div>
+                        <div class="l2"><a href="https://web.whatsapp.com/" target="_blank"><i class="fa-solid fa-phone"></i></a> <span>You can contact us in +20 1011823873</span></div>
+                        <div class="l2"><a href=""><i class="fa-regular fa-envelope" target="_blank"></i></a> <span>You can contact us also in zeyad4WOnly@gmail.com</span></div>
+                    </div>
+                </div>
+                <div class="footerAboutUs">
+                    <h3 class="footerheader">About us</h3>
+                    <p class="footerAboutDescription">Here we give you one of the best services with the best avalible quality in the world to make you comfortable as a king :)</p>
+                    <div class="footerAboutUsLinks">
+                        <a href="https://www.facebook.com/zeyad.ayman.9803/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/zeyad-ayman-a050b0221/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>           
+                        <a href="" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
