@@ -7,8 +7,8 @@ import bcrypt
 app = Flask(__name__)
 
 #To secure sessions 
-app.secret_key='spint_project_7890'
-app.secret_key_hash= 'spint_project_9999'
+app.secret_key=''
+app.secret_key_hash= ''
 
 #Database connection 
 app.config['MYSQL_HOST'] = 'localhost'
@@ -154,54 +154,6 @@ def profile():
     return redirect(url_for('register'))
 
 
-'''
-#####
-def predict(pickup_datetime,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude,passenger_count):
-
-  # Load the linear regression model trained earlier
-  loaded_model = pickle.load(open('regression_model.sav','rb'))
-
-  # Ensure loaded model's attributes
-  #print("Model coefficients:", loaded_model.coef_)  # If coefficients exist
-
-  # Input data for prediction
-  input_data = {
-      'pickup_datetime':pickup_datetime ,
-      'pickup_longitude':pickup_longitude ,
-      'pickup_latitude':  pickup_latitude,
-      'dropoff_longitude': dropoff_longitude,
-      'dropoff_latitude': dropoff_latitude,
-      'passenger_count': passenger_count
-  }
-
-  # Convert pickup datetime string to datetime object
-  input_data['pickup_datetime'] = pd.to_datetime(input_data['pickup_datetime'])
-
-  # Feature engineering
-  input_data['year'] = input_data['pickup_datetime'].year
-  input_data['month'] = input_data['pickup_datetime'].month
-  input_data['day'] = input_data['pickup_datetime'].day
-  input_data['hour'] = input_data['pickup_datetime'].hour
-  input_data['minute'] = input_data['pickup_datetime'].minute
-  input_data['abs_diff_longitude'] = abs(input_data['dropoff_longitude'] - input_data['pickup_longitude'])
-  input_data['abs_diff_latitude'] = abs(input_data['dropoff_latitude'] - input_data['pickup_latitude'])
-  input_data['distance_km'] = haversine_distance(input_data['pickup_longitude'], input_data['pickup_latitude'],
-                                                  input_data['dropoff_longitude'], input_data['dropoff_latitude'])
-
-  # Select relevant features for prediction
-  features = ['pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude','passenger_count', 'abs_diff_longitude', 'abs_diff_latitude', 'year', 'month', 'day', 'hour', 'minute', 'distance_km']
-
-  # Arrange input features in the same order as used during model training
-  input_features = [input_data[feature] for feature in features]
-
-  # Debugging: Print input feature array
-  #print("Input features:", input_features)
-
-  # Make prediction using the loaded model
-  prediction = loaded_model.predict([input_features])
-
-  print(prediction)
-'''
 #to run the program
 if __name__ == '__main__':
     app.run(debug = True , port=8000)
